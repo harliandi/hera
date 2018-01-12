@@ -33,11 +33,11 @@
                 </p>
             </div>
             <div class="col align-self-end">
-                <a href="www.facebook.com">
-                    <img src="{{ asset('assets/facebook.svg') }}" width="50px" alt="">
+                <a href="http://www.facebook.com" target="_blank">
+                    <img src="{{ asset('assets/facebook.svg') }}" width="40px" alt="">
                 </a>
-                <a href="www.google.com">
-                    <img src="{{ asset('assets/google.webp') }}" width="50px" alt="">
+                <a href="http://www.google.com" target="_blank">
+                    <img src="{{ asset('assets/google.webp') }}" width="43px" alt="">
                 </a>
             </div>
         </div>

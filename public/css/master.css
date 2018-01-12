@@ -27,11 +27,15 @@
 }
 
 footer img {
-    margin-top: 30px;
+    margin-top: 15px;
+    margin-bottom: 12px;
     margin-left: 25px;
     float: right;
 }
 
 footer p {
     margin-top: 30px;
+}
+body > .container:first-child {
+    min-height: 800px;
 }

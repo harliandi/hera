@@ -17,12 +17,13 @@
 
         public function produk()
         {
-            return view('home');
+            return view('produk');
         }
 
         public function near_me()
         {
-            return view('home');
+            Mapper::map(-6.3681819, 106.8328601, ['eventBeforeLoad' => 'addMarkerListener(map);']);
+            return view('near_me');
         }
 
         public function area()

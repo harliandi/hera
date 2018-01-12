@@ -7,18 +7,18 @@
             <div class="card-body">
                 {{ Form::open(['route' => 'area.change', 'class' => 'form']) }}
                 <div class="form-group">
-                    {{ Form::label('provinsi', 'Provinsi', ['class' => 'label']) }}
-                    {{ Form::select('provinsi', ['L' => 'Large', 'S' => 'Small'], null, ['placeholder' => 'Pilih Provinsi', 'class' => 'form-control']) }}
+                    {{ Form::label('provinsi', 'Province', ['class' => 'label']) }}
+                    {{ Form::select('provinsi', ['L' => 'Large', 'S' => 'Small'], null, ['placeholder' => 'Choose Province', 'class' => 'form-control']) }}
                 </div>
                 <div class="form-group">
-                    {{ Form::label('kota', 'Kota', ['class' => 'label']) }}
-                    {{ Form::select('kota', ['L' => 'Large', 'S' => 'Small'], null, ['placeholder' => 'Pilih Kota', 'class' => 'form-control']) }}
+                    {{ Form::label('kota', 'City', ['class' => 'label']) }}
+                    {{ Form::select('kota', ['L' => 'Large', 'S' => 'Small'], null, ['placeholder' => 'Choose City', 'class' => 'form-control']) }}
                 </div>
                 <div class="form-group">
-                    {{ Form::label('kategori', 'Kategori', ['class' => 'label']) }}
-                    {{ Form::select('kategori', $cat, null, ['placeholder' => 'Pilih Kategori', 'class' => 'form-control']) }}
+                    {{ Form::label('kategori', 'Category', ['class' => 'label']) }}
+                    {{ Form::select('kategori', $cat, null, ['placeholder' => 'Choose Category', 'class' => 'form-control']) }}
                 </div>
-                {{ Form::submit('Lihat Data', ['class' => 'btn btn-primary']) }}
+                {{ Form::submit('View Data', ['class' => 'btn btn-primary']) }}
                 {{ Form::close()}}
             </div>
         </div>

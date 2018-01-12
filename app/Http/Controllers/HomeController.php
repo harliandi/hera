@@ -3,6 +3,7 @@
     namespace App\Http\Controllers;
 
     use App\Models\Faq;
+    use App\Models\Kategori;
     use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
     use Illuminate\Http\Request;
 
@@ -27,7 +28,14 @@
         public function area()
         {
             Mapper::map(-6.3681819, 106.8328601, ['eventBeforeLoad' => 'addMarkerListener(map);']);
-            return view('area');
+            $cat = Kategori::select('id_kategori', 'nama_kategori')->get()->toArray();
+            $prov = Kategori::all()->toArray();
+            return view('area')->with(['cat' => $cat, 'prov' => $prov]);
+        }
+
+        public function area_change(Request $req)
+        {
+
         }
 
         public function faq()

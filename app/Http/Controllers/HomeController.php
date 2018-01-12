@@ -3,6 +3,7 @@
     namespace App\Http\Controllers;
 
     use App\Models\Faq;
+    use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
     use Illuminate\Http\Request;
 
     class HomeController extends Controller
@@ -25,12 +26,13 @@
 
         public function area()
         {
-            return view('home');
+            Mapper::map(-6.3681819, 106.8328601, ['eventBeforeLoad' => 'addMarkerListener(map);']);
+            return view('area');
         }
 
         public function faq()
         {
-            return view('home')->with('faq', Faq::all());
+            return view('faq')->with('faq', Faq::all());
         }
 
         public function be()

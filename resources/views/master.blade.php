@@ -14,14 +14,35 @@
           integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Holtwood+One+SC" rel="stylesheet">
     @yield('css')
 
 
 </head>
 <body>
 <div class="container">
+    @yield('header')
     @yield('content')
 </div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-start">
+                <p>
+                    &copy; 2018 Herliati Azizah. All right Reserved.
+                </p>
+            </div>
+            <div class="col align-self-end">
+                <a href="www.facebook.com">
+                    <img src="{{ asset('assets/facebook.svg') }}" width="50px" alt="">
+                </a>
+                <a href="www.google.com">
+                    <img src="{{ asset('assets/google.webp') }}" width="50px" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"

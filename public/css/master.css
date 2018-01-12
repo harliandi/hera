@@ -1,0 +1,37 @@
+.title-web {
+    font-family: 'Holtwood One SC', serif;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 45px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #ffffff;
+    background-color: #000000;
+}
+.nav-link{
+    color: #000000;
+}
+.valign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-web {
+    width: auto;
+    height: 250px;
+    margin-top: 20px;
+}
+
+footer img {
+    margin-top: 30px;
+    margin-left: 25px;
+    float: right;
+}
+
+footer p {
+    margin-top: 30px;
+}

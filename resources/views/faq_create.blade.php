@@ -1,12 +1,5 @@
-<?php
-    /**
-     * Created by PhpStorm.
-     * User: harliandi
-     * Date: 31/12/17
-     * Time: 23.02
-     */
-?>
 @extends('master')
+@include('header')
 @section('content')
     <div class="card" style="width: 100%">
         <div class="card-body">
@@ -38,5 +31,7 @@
     </div>
 
 @endsection
-
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/master.css')}}">
+@endsection
 

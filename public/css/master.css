@@ -25,6 +25,12 @@
     height: 250px;
     margin-top: 20px;
 }
+.icon-food{
+    font-size: 80px;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
 
 footer img {
     margin-top: 15px;
@@ -38,4 +44,8 @@ footer p {
 }
 body > .container:first-child {
     min-height: 800px;
+}
+
+.social-tool p:last-child {
+    margin-left: 73%;
 }

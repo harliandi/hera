@@ -1,12 +1,5 @@
-<?php
-    /**
-     * Created by PhpStorm.
-     * User: harliandi
-     * Date: 31/12/17
-     * Time: 23.02
-     */
-?>
 @extends('master')
+@include('header')
 @section('content')
     <div class="card" style="width: 100%">
         <div class="card-body">
@@ -59,15 +52,16 @@
     </div>
 
 @endsection
-
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/master.css')}}">
+@endsection
 @section('js')
     <script type="text/javascript">
 
         dynamicallyCreatedMarkers = [];
 
-        function addMarkerListener(map)
-        {
-            map.addListener('click', function(e) {
+        function addMarkerListener(map) {
+            map.addListener('click', function (e) {
                 var marker = new google.maps.Marker({
                     position: e.latLng,
                     map: map
@@ -81,19 +75,18 @@
             });
         }
 
-        $('#submit').click(function() {
+        $('#submit').click(function () {
             $.ajax({
                 type: "POST",
                 url: '/produk/testing',
                 data: dynamicallyCreatedMarkers.serialize(),
-                success: function(response)
-                {
+                success: function (response) {
                     console.log('success')
                 }
             });
         });
 
     </script>
-    @endsection
+@endsection
 
 

@@ -12,6 +12,7 @@
         //index controller untuk frontend
         public function index()
         {
+            Mapper::map(-6.3681819, 106.8328601, ['eventBeforeLoad' => 'addMarkerListener(map);']);
             return view('home');
         }
 

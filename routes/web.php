@@ -19,6 +19,7 @@ Route::get('/area', 'HomeController@area')->name('home.area');
 Route::get('/area/change', 'HomeController@area')->name('area.change');
 Route::get('/home/faq', 'HomeController@faq')->name('home.faq');
 
+Route::get('be', 'HomeController@be')->name('be.index');
 Route::get('be/index', 'HomeController@be')->name('be.index');
 
 Route::resource('be/faq', 'FaqController');

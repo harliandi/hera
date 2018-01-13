@@ -1,16 +1,10 @@
-<?php
-    /**
-     * Created by PhpStorm.
-     * User: harliandi
-     * Date: 01/01/18
-     * Time: 00.36
-     */
-?>
 @extends('master')
+@include('header')
 @section('content')
     <div class="card" style="width: 100%">
         <div class="card-body">
-            <h5 class="card-title">Data Master Produk - {{ link_to_route('produk.create', 'Tambah Data', [], ['class' => 'btn btn-sm btn-success']) }}</h5>
+            <h5 class="card-title">Data Master Produk
+                - {{ link_to_route('produk.create', 'Tambah Data', [], ['class' => 'btn btn-sm btn-success']) }}</h5>
             <table id="example" class="display" cellspacing="0" width="100%">
                 <thead>
                 <tr>
@@ -45,4 +39,7 @@
             </table>
         </div>
     </div>
+@endsection
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/master.css')}}">
 @endsection

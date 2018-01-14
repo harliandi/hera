@@ -25,11 +25,11 @@
                         <td>{{ $i++ }}</td>
                         <td>{{ $item->nama_produk }}</td>
                         <td>{{ $item->deskripsi_produk }}</td>
-                        <td>{{ $item->id_kategori }}</td>
-                        <td>{{ date('d M Y H:i:s', strtotime($item->created_at)) }}</td>
+                        <td>{{ $item->kategori->nama_kategori }}</td>
+                        <td>{{ date('d M Y H:i:s', strtotime($item->updated_date)) }}</td>
                         <td>{{ link_to_route('produk.edit', 'Ubah Data', ['id' => $item->id_produk], ['class' =>  'btn btn-sm btn-warning']) }}
                             <br>
-                            {{ Form::open(array('url' => 'produk/' . $item->id_produk, 'class' => '')) }}
+                            {{ Form::open(array('url' => 'be/produk/' . $item->id_produk, 'class' => '')) }}
                             {{ Form::hidden('_method', 'DELETE') }}
                             {{ Form::submit('Hapus Data', array('class' => 'btn btn-sm btn-danger')) }}
                             {{ Form::close() }}</td>

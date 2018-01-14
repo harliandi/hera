@@ -26,7 +26,7 @@
             </div>
             <div class="form-group">
                 {{ Form::label('id_kategori', 'Kategori', ['class' => 'label'])}}
-                {{ Form::text('id_kategori', null,['class' => 'form-control', 'required' => 'required']) }}
+                {{ Form::select('id_kategori', $cat,null, ['class' => 'form-control', 'required' => 'required']) }}
             </div>
             <div class="form-group">
                 {{ Form::label('deskripsi_produk', 'Deskripsi', ['class' => 'label'])}}
@@ -54,39 +54,6 @@
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{asset('css/master.css')}}">
-@endsection
-@section('js')
-    <script type="text/javascript">
-
-        dynamicallyCreatedMarkers = [];
-
-        function addMarkerListener(map) {
-            map.addListener('click', function (e) {
-                var marker = new google.maps.Marker({
-                    position: e.latLng,
-                    map: map
-                });
-
-                map.panTo(e.latLng);
-
-                dynamicallyCreatedMarkers.push({
-                    position: e.latLng
-                });
-            });
-        }
-
-        $('#submit').click(function () {
-            $.ajax({
-                type: "POST",
-                url: '/produk/testing',
-                data: dynamicallyCreatedMarkers.serialize(),
-                success: function (response) {
-                    console.log('success')
-                }
-            });
-        });
-
-    </script>
 @endsection
 
 

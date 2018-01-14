@@ -40,7 +40,7 @@
                 'nama_kategori'      => $request->nama_kategori,
                 'deskripsi_kategori' => $request->deskripsi_kategori,
             ]);
-            return redirect('kategori');
+            return redirect()->route('kategori.index');
         }
 
         /**
@@ -79,7 +79,7 @@
             $kategori->nama_kategori = $request->nama_kategori;
             $kategori->deskripsi_kategori = $request->deskripsi_kategori;
             $kategori->save();
-            return redirect('kategori');
+            return redirect()->route('kategori.index');
         }
 
         /**
@@ -91,6 +91,6 @@
         public function destroy($id)
         {
             Kategori::destroy($id);
-            return redirect('kategori');
+            return redirect()->route('kategori.index');
         }
     }

@@ -39,7 +39,7 @@
                 'tanya_faq' => $request->tanya_faq,
                 'jawab_faq' => $request->jawab_faq
             ]);
-            return redirect('faq');
+            return redirect()->route('faq.index');
         }
 
         /**
@@ -91,6 +91,6 @@
         public function destroy($id)
         {
             Faq::destroy($id);
-            return redirect('faq');
+            return redirect()->route('faq.index');
         }
     }

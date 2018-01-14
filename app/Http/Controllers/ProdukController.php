@@ -2,6 +2,7 @@
 
     namespace App\Http\Controllers;
 
+    use App\Models\Kategori;
     use App\Models\Produk;
     use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
     use Illuminate\Http\Request;
@@ -23,12 +24,12 @@
          *
          * @return \Illuminate\Http\Response
          *
-         * todo:create and get latlong from js after click and save it
          */
         public function create()
         {
-            Mapper::map(-6.3681819, 106.8328601, ['eventBeforeLoad' => 'addMarkerListener(map);']);
-            return view('produk_create');
+            Mapper::map(-6.3681819, 106.8328601, ['marker' => false, 'eventBeforeLoad' => 'addMarkerListener(map);']);
+            $cat = Kategori::pluck('nama_kategori', 'id_kategori');
+            return view('produk_create')->with('cat', $cat);
         }
 
         /**

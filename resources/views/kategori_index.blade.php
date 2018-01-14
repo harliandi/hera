@@ -28,7 +28,7 @@
                         <td>{{ $item->id_parent }}</td>
                         <td>{{ link_to_route('kategori.edit', 'Ubah Data', ['id' => $item->id_kategori], ['class' =>  'btn btn-sm btn-warning']) }}
                             <br>
-                            {{ Form::open(array('url' => 'kategori/' . $item->id_kategori, 'class' => '')) }}
+                            {{ Form::open(array('url' => 'be/kategori/' . $item->id_kategori, 'class' => '')) }}
                             {{ Form::hidden('_method', 'DELETE') }}
                             {{ Form::submit('Hapus Data', array('class' => 'btn btn-sm btn-danger')) }}
                             {{ Form::close() }}</td>

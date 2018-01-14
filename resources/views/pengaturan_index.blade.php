@@ -28,7 +28,7 @@
                         <td>{{ date('d M Y H:i:s', strtotime($item->created_at)) }}</td>
                         <td>{{ link_to_route('pengaturan.edit', 'Ubah Data', ['id' => $item->id_pengaturan], ['class' =>  'btn btn-sm btn-warning']) }}
                             <br>
-                            {{ Form::open(array('url' => 'pengaturan/' . $item->id_pengaturan, 'class' => '')) }}
+                            {{ Form::open(array('url' => 'be/pengaturan/' . $item->id_pengaturan, 'class' => '')) }}
                             {{ Form::hidden('_method', 'DELETE') }}
                             {{ Form::submit('Hapus Data', array('class' => 'btn btn-sm btn-danger')) }}
                             {{ Form::close() }}</td>

@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="card" style="width: 100%">
-            <h3 class="card-header">MASTER DATA</h3>
+            <h3 class="card-header">Master Data</h3>
             <div class="card-body">
                 <div class="row">
                     <span class="col align-self-center text-center"><a href="{{route('faq.index')}}">FAQ</a></span>

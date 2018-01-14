@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sat, 13 Jan 2018 01:41:11 +0700.
+ * Date: Sun, 14 Jan 2018 02:53:41 +0700.
  */
 
 namespace App\Models;
@@ -16,6 +16,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $id_parent
  * @property string $nama_kategori
  * @property string $deskripsi_kategori
+ * 
+ * @property \Illuminate\Database\Eloquent\Collection $produks
  *
  * @package App\Models
  */
@@ -34,4 +36,9 @@ class Kategori extends Eloquent
 		'nama_kategori',
 		'deskripsi_kategori'
 	];
+
+	public function produks()
+	{
+		return $this->hasMany(\App\Models\Produk::class, 'id_kategori');
+	}
 }

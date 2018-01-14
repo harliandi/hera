@@ -24,7 +24,7 @@
                         <td>{{ $item->jawab_faq }}</td>
                         <td>{{ link_to_route('faq.edit', 'Ubah Data', ['id' => $item->id_faq], ['class' =>  'btn btn-sm btn-warning']) }}
                             <br>
-                            {{ Form::open(array('url' => 'faq/' . $item->id_faq, 'class' => '')) }}
+                            {{ Form::open(array('url' => 'be/faq/' . $item->id_faq, 'class' => '')) }}
                             {{ Form::hidden('_method', 'DELETE') }}
                             {{ Form::submit('Hapus Data', array('class' => 'btn btn-sm btn-danger')) }}
                             {{ Form::close() }}</td>

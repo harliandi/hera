@@ -6,9 +6,13 @@
         </div>
         <div class="col align-self-end">
             <ul class="nav nav-pills nav-fill justify-content-end">
+                @if(strpos(url()->current(),'be') !== false)
                 <li class="nav-item ">
-                    <a class="nav-link {{ (Route::currentRouteName() === 'home.nearme') ? 'active': '' }}" href="{{ route('home.nearme') }}">Near Me <span
-                                class="sr-only">(current)</span></a>
+                    <a class="nav-link {{ (strpos(url()->current(),'be') !== false) ? 'active': '' }}" href="{{ route('be.index') }}">Backend Data</a>
+                </li>
+                @endif
+                <li class="nav-item ">
+                    <a class="nav-link {{ (Route::currentRouteName() === 'home.nearme') ? 'active': '' }}" href="{{ route('home.nearme') }}">Near Me</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ (Route::currentRouteName() === 'home.produk') ? 'active': '' }}" href="{{ route('home.produk') }}">Product</a>

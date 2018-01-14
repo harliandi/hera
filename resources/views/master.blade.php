@@ -19,7 +19,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
 
     @yield('css')
+    <script type="text/javascript">
+        dynamicallyCreatedMarkers = [];
 
+        function addMarkerListener(map) {
+            map.addListener('click', function (e) {
+                var marker = new google.maps.Marker({
+                    position: e.latLng,
+                    map: map
+                });
+
+                map.panTo(e.latLng);
+
+                dynamicallyCreatedMarkers.push({
+                    position: e.latLng
+                });
+                var coord = e.latLng;
+                var data = coord.toString().split(',');
+                console.log(coord.toString());
+                document.getElementById('latitude').value = data[0].replace('(','');
+                document.getElementById('longtitude').value = data[1].replace(')','');
+            });
+        }
+    </script>
 
 </head>
 <body>
@@ -57,7 +79,7 @@
 <script src="https://code.jquery.com/jquery-migrate-3.0.1.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
-<script>
+<script type="text/javascript">
     $(document).ready(function () {
         $('#example').DataTable({
             "language": {

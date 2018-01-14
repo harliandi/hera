@@ -233,6 +233,7 @@
             'Html'         => Collective\Html\HtmlFacade::class,
             'Image'        => Intervention\Image\Facades\Image::class,
             'Mapper'       => Cornford\Googlmapper\Facades\MapperFacade::class,
+            'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         ],
 
     ];

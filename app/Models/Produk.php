@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sun, 14 Jan 2018 02:53:41 +0700.
+ * Date: Sun, 14 Jan 2018 21:19:21 +0700.
  */
 
 namespace App\Models;
@@ -15,7 +15,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $id_produk
  * @property string $nama_produk
  * @property int $id_kategori
- * @property int $id_city
+ * @property string $id_city
  * @property string $deskripsi_produk
  * @property string $latitude
  * @property string $longtitude
@@ -35,8 +35,7 @@ class Produk extends Eloquent
 	public $timestamps = false;
 
 	protected $casts = [
-		'id_kategori' => 'int',
-		'id_city' => 'int'
+		'id_kategori' => 'int'
 	];
 
 	protected $dates = [
@@ -58,6 +57,10 @@ class Produk extends Eloquent
 	public function kategori()
 	{
 		return $this->belongsTo(\App\Models\Kategori::class, 'id_kategori');
+	}
+	public function city()
+	{
+		return $this->belongsTo(\App\Models\Regency::class, 'id_city');
 	}
 
 	public function likes()

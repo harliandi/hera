@@ -29,6 +29,10 @@
                 {{ Form::select('id_kategori', $cat,null, ['class' => 'form-control', 'required' => 'required']) }}
             </div>
             <div class="form-group">
+                {{ Form::label('id_city', 'Kota', ['class' => 'label'])}}
+                {{ Form::select('id_city', $city, null, ['class' => 'form-control', 'required' => 'required']) }}
+            </div>
+            <div class="form-group">
                 {{ Form::label('deskripsi_produk', 'Deskripsi', ['class' => 'label'])}}
                 {{ Form::textarea('deskripsi_produk', null,['class' => 'form-control', 'required' => 'required']) }}
             </div>

@@ -5,7 +5,7 @@
         <div class="card" style="width: 50%">
             <h3 class="card-header">Area</h3>
             <div class="card-body">
-                {{ Form::open(['route' => 'area.change', 'class' => 'form', 'method' => 'get']) }}
+                {{ Form::open(['route' => 'area.detail', 'class' => 'form', 'method' => 'get']) }}
                 <div class="form-group">
                     {{ Form::label('provinsi', 'Province', ['class' => 'label']) }}
                     {{ Form::select('provinsi',$prov, null, ['placeholder' => 'Choose Province', 'class' => 'form-control', 'required' => 'required']) }}

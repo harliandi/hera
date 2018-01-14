@@ -4,6 +4,7 @@
 
     use App\Models\Kategori;
     use App\Models\Produk;
+    use App\Models\Regency;
     use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
     use Illuminate\Http\Request;
 
@@ -29,7 +30,8 @@
         {
             Mapper::map(-6.3681819, 106.8328601, ['marker' => false, 'eventBeforeLoad' => 'addMarkerListener(map);']);
             $cat = Kategori::pluck('nama_kategori', 'id_kategori');
-            return view('produk_create')->with('cat', $cat);
+            $city = Regency::pluck('name', 'id');
+            return view('produk_create')->with(['cat' => $cat, 'city' => $city]);
         }
 
         /**
@@ -43,6 +45,7 @@
             Produk::create([
                 'nama_produk'      => $request->nama_produk,
                 'id_kategori'      => $request->id_kategori,
+                'id_city'      => $request->id_city,
                 'deskripsi_produk' => $request->deskripsi_produk,
                 'latitude'         => $request->latitude,
                 'longtitude'       => $request->longtitude,

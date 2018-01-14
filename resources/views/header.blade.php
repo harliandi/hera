@@ -6,6 +6,9 @@
         </div>
         <div class="col align-self-end">
             <ul class="nav nav-pills nav-fill justify-content-end">
+                <li class="nav-item ">
+                    <a class="nav-link {{ (Route::currentRouteName() === 'home.index') ? 'active': '' }}" href="{{ route('home.index') }}">Home</a>
+                </li>
                 @if(strpos(url()->current(),'be') !== false)
                 <li class="nav-item ">
                     <a class="nav-link {{ (strpos(url()->current(),'be') !== false) ? 'active': '' }}" href="{{ route('be.index') }}">Backend Data</a>
@@ -15,10 +18,10 @@
                     <a class="nav-link {{ (Route::currentRouteName() === 'home.nearme') ? 'active': '' }}" href="{{ route('home.nearme') }}">Near Me</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (Route::currentRouteName() === 'home.produk') ? 'active': '' }}" href="{{ route('home.produk') }}">Product</a>
+                    <a class="nav-link {{ (strpos(url()->current(),'produk')) ? 'active': '' }}" href="{{ route('home.produk') }}">Product</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (Route::currentRouteName() === 'home.area') ? 'active': '' }}" href="{{ route('home.area') }}">Area</a>
+                    <a class="nav-link {{ (strpos(url()->current(),'area')) ? 'active': '' }}" href="{{ route('home.area') }}">Area</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ (Route::currentRouteName() === 'home.faq') ? 'active': '' }}" href="{{ route('home.faq') }}">FAQ</a>

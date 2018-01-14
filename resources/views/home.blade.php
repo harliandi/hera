@@ -21,7 +21,10 @@
                                  style="margin-left: -15px;width: 75px;margin-top: -10px;"></div>
                             <div class="row social-tool">
                                 <p class="float-left text-muted">
-                                    <i class="material-icons">share</i>
+                                    <a class="fb-share" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
+                                       target="_blank">
+                                        <i class="material-icons">share</i>
+                                    </a>
                                 </p>
                                 <p class="float-right text-muted ">
                                     <i class="material-icons">thumb_up</i>
@@ -30,13 +33,16 @@
                         </div>
                     </div>
                     <div class="card" style="width: 30%;height: 270px;margin: 0 3%;">
-                        <i class="material-icons icon-food card-img-top">local_drink</i>
+                        <i class="material-icons icon-food card-img-top">local_cafe</i>
                         <div class="card-body">
                             <div class="rating card-title"
                                  style="margin-left: -15px;width: 75px;margin-top: -10px;"></div>
                             <div class="row social-tool">
                                 <p class="float-left text-muted align-self-start">
-                                    <i class="material-icons">share</i>
+                                    <a class="fb-share" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
+                                       target="_blank">
+                                        <i class="material-icons">share</i>
+                                    </a>
                                 </p>
                                 <p class="float-right text-muted align-self-end">
                                     <i class="material-icons">thumb_up</i>
@@ -45,13 +51,16 @@
                         </div>
                     </div>
                     <div class="card" style="width: 30%;height: 270px;">
-                        <i class="material-icons icon-food card-img-top">local_drink</i>
+                        <i class="material-icons icon-food card-img-top">local_cafe</i>
                         <div class="card-body">
                             <div class="rating card-title"
                                  style="margin-left: -15px;width: 75px;margin-top: -10px;"></div>
                             <div class="row social-tool">
                                 <p class="float-left text-muted align-self-start">
-                                    <i class="material-icons">share</i>
+                                    <a class="fb-share" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
+                                       target="_blank">
+                                        <i class="material-icons">share</i>
+                                    </a>
                                 </p>
                                 <p class="float-right text-muted align-self-end">
                                     <i class="material-icons">thumb_up</i>
@@ -68,7 +77,10 @@
                                  style="margin-left: -15px;width: 75px;margin-top: -10px;"></div>
                             <div class="row social-tool">
                                 <p class="float-left text-muted">
-                                    <i class="material-icons">share</i>
+                                    <a class="fb-share" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
+                                       target="_blank">
+                                        <i class="material-icons">share</i>
+                                    </a>
                                 </p>
                                 <p class="float-right text-muted ">
                                     <i class="material-icons">thumb_up</i>
@@ -77,13 +89,16 @@
                         </div>
                     </div>
                     <div class="card" style="width: 30%;height: 270px;margin: 0 3%;">
-                        <i class="material-icons icon-food card-img-top">local_drink</i>
+                        <i class="material-icons icon-food card-img-top">local_cafe</i>
                         <div class="card-body">
                             <div class="rating card-title"
                                  style="margin-left: -15px;width: 75px;margin-top: -10px;"></div>
                             <div class="row social-tool">
                                 <p class="float-left text-muted align-self-start">
-                                    <i class="material-icons">share</i>
+                                    <a class="fb-share" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
+                                       target="_blank">
+                                        <i class="material-icons">share</i>
+                                    </a>
                                 </p>
                                 <p class="float-right text-muted align-self-end">
                                     <i class="material-icons">thumb_up</i>
@@ -92,13 +107,16 @@
                         </div>
                     </div>
                     <div class="card" style="width: 30%;height: 270px;">
-                        <i class="material-icons icon-food card-img-top">local_drink</i>
+                        <i class="material-icons icon-food card-img-top">local_cafe</i>
                         <div class="card-body">
                             <div class="rating card-title"
                                  style="margin-left: -15px;width: 75px;margin-top: -10px;"></div>
                             <div class="row social-tool">
                                 <p class="float-left text-muted align-self-start">
-                                    <i class="material-icons">share</i>
+                                    <a class="fb-share" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
+                                       target="_blank">
+                                        <i class="material-icons">share</i>
+                                    </a>
                                 </p>
                                 <p class="float-right text-muted align-self-end">
                                     <i class="material-icons">thumb_up</i>
@@ -130,7 +148,7 @@
                     <div class="card" style="margin: 50px 0;">
                         <a href="http://www.facebook.com" target="_blank">
                             <div class="card-body">
-                                <img src="{{ asset('assets/facebook.svg') }}" width="40px" alt="">
+                                <a href="{{ route('fb-login') }}" target="_blank"><img src="{{ asset('assets/facebook.svg') }}" width="40px" alt=""></a>
                             </div>
                         </a>
                     </div>

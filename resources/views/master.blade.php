@@ -37,8 +37,8 @@
                 var coord = e.latLng;
                 var data = coord.toString().split(',');
                 console.log(coord.toString());
-                document.getElementById('latitude').value = data[0].replace('(','');
-                document.getElementById('longtitude').value = data[1].replace(')','');
+                document.getElementById('latitude').value = data[0].replace('(', '');
+                document.getElementById('longtitude').value = data[1].replace(')', '');
             });
         }
     </script>
@@ -85,6 +85,11 @@
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Indonesian.json"
             }
+        });
+        $('.fb-share').click(function(e) {
+            e.preventDefault();
+            window.open($(this).attr('href'), 'fbShareWindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 275) + ', left=' + ($(window).width() / 2 - 225) + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+            return false;
         });
     });
 </script>

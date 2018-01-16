@@ -47,5 +47,10 @@ body > .container:first-child {
 }
 
 .social-tool p:last-child {
-    margin-left: 73%;
+    margin-left: 66%;
+}
+.social-tool p:last-child span {
+    vertical-align: top;
+    top: 3px;
+    position: relative;
 }

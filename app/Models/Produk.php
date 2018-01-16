@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sun, 14 Jan 2018 21:19:21 +0700.
+ * Date: Mon, 15 Jan 2018 21:47:18 +0700.
  */
 
 namespace App\Models;
@@ -16,6 +16,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $nama_produk
  * @property int $id_kategori
  * @property string $id_city
+ * @property string $gambar
  * @property string $deskripsi_produk
  * @property string $latitude
  * @property string $longtitude
@@ -47,6 +48,7 @@ class Produk extends Eloquent
 		'nama_produk',
 		'id_kategori',
 		'id_city',
+		'gambar',
 		'deskripsi_produk',
 		'latitude',
 		'longtitude',
@@ -58,10 +60,11 @@ class Produk extends Eloquent
 	{
 		return $this->belongsTo(\App\Models\Kategori::class, 'id_kategori');
 	}
-	public function city()
-	{
-		return $this->belongsTo(\App\Models\Regency::class, 'id_city');
-	}
+
+    public function city()
+    {
+        return $this->belongsTo(\App\Models\Regency::class, 'id_city');
+    }
 
 	public function likes()
 	{
@@ -70,6 +73,6 @@ class Produk extends Eloquent
 
 	public function ratings()
 	{
-		return $this->hasMany(\App\Models\Rating::class, 'id_produk');
+		return $this->hasOne(\App\Models\Rating::class, 'id_produk');
 	}
 }

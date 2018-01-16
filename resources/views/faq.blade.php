@@ -16,12 +16,12 @@
                 <div class="row">
                     <div class="col-md-1">Q</div>
                     <div class="col-md-1">:</div>
-                    <div class="col-md-10">{{ $data->tanya_faq }}</div>
+                    <div class="col-md-10"><p class="alert alert-primary">{{ $data->tanya_faq }}</p></div>
                 </div>
                 <div class="row">
                     <div class="col-md-1">A</div>
                     <div class="col-md-1">:</div>
-                    <div class="col-md-10">{{ $data->jawab_faq }}</div>
+                    <div class="col-md-10"><p class="alert alert-success">{{ $data->jawab_faq }}</p></div>
                 </div>
             @endforeach
         </div>

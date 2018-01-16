@@ -18,6 +18,8 @@
     Route::get('/produk/drink', 'HomeController@product_list')->name('produk.drink');
     Route::get('/produk/detail/{id}', 'HomeController@product_detail')->name('produk.detail');
     Route::get('/produk/detail', 'HomeController@product_detail')->name('produk.detail');
+    Route::get('/produk/like', 'HomeController@product_like')->name('produk.like');
+    Route::get('/produk/rating', 'HomeController@product_rating')->name('produk.rating');
     Route::get('/near-me', 'HomeController@near_me')->name('home.nearme');
     Route::get('/area', 'HomeController@area')->name('home.area');
     Route::get('/area/change', 'HomeController@area_change')->name('area.change');

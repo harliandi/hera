@@ -24,6 +24,6 @@ class SocialAuthFacebookController extends Controller
      */
     public function callback(Request $request)
     {
-        dd($request);
+        return \request()->route('home.index');
     }
 }

@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sun, 14 Jan 2018 21:19:21 +0700.
+ * Date: Tue, 16 Jan 2018 03:13:05 +0700.
  */
 
 namespace App\Models;
@@ -16,6 +16,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $id_produk
  * @property \Carbon\Carbon $created_date
  * @property \Carbon\Carbon $updated_date
+ * @property float $rating
  * 
  * @property \App\Models\Produk $produk
  *
@@ -28,7 +29,8 @@ class Rating extends Eloquent
 	public $timestamps = false;
 
 	protected $casts = [
-		'id_produk' => 'int'
+		'id_produk' => 'int',
+		'rating' => 'float'
 	];
 
 	protected $dates = [
@@ -39,7 +41,8 @@ class Rating extends Eloquent
 	protected $fillable = [
 		'id_produk',
 		'created_date',
-		'updated_date'
+		'updated_date',
+		'rating'
 	];
 
 	public function produk()

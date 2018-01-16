@@ -9,7 +9,7 @@
 
 <html lang="id">
 <head>
-    <title>Website Data Kuliner</title>
+    <title>Wisata Kuliner Nusantara</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
           integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
@@ -17,6 +17,8 @@
     <link href="https://fonts.googleapis.com/css?family=Holtwood+One+SC" rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
 
     @yield('css')
     <script type="text/javascript">
@@ -54,7 +56,7 @@
         <div class="row">
             <div class="col align-self-start">
                 <p>
-                    &copy; 2018 Herliati Azizah. All right Reserved.
+                    &copy; 2018 WKN. All right Reserved.
                 </p>
             </div>
             <div class="col align-self-end">
@@ -79,6 +81,7 @@
 <script src="https://code.jquery.com/jquery-migrate-3.0.1.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $('#example').DataTable({
@@ -91,6 +94,7 @@
             window.open($(this).attr('href'), 'fbShareWindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 275) + ', left=' + ($(window).width() / 2 - 225) + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
             return false;
         });
+        $('.select_complete').select2();
     });
 </script>
 @yield('js')

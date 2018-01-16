@@ -14,116 +14,66 @@
             <h3 class="card-header">Top List</h3>
             <div class="card-body">
                 <div class="row justify-content-center" style="margin-bottom: 20px">
-                    <div class="card" style="width: 30%; height: 270px;">
-                        <i class="material-icons icon-food card-img-top">restaurant</i>
-                        <div class="card-body">
-                            <div class="rating card-title"
-                                 style="margin-left: -15px;width: 75px;margin-top: -10px;"></div>
-                            <div class="row social-tool">
-                                <p class="float-left text-muted">
-                                    <a class="fb-share" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
-                                       target="_blank">
-                                        <i class="material-icons">share</i>
-                                    </a>
-                                </p>
-                                <p class="float-right text-muted ">
-                                    <i class="material-icons">thumb_up</i>
-                                </p>
-                            </div>
+                    @foreach($food as $data)
+                        <div class="card" style="width: 30%; height: 270px; margin: 0 1%;">
+                            <a href="{{ route('produk.detail', ['id' => $data->id_produk]) }}">
+                                @if($data->gambar === '')
+                                    <img src="http://via.placeholder.com/336x200" class="img-responsive">
+                                @else
+                                    <img src="{{ asset('storage/images/'.$data->gambar) }}" class="" width="100%"
+                                         height="200px">
+                                @endif
+                                <div class="card-body">
+                                    <div class="rating card-title"
+                                         style="margin-left: -15px;width: 75px;margin-top: -10px;"
+                                         data-rateyo-rating="{{ (empty($data->ratings->rating)) ? 0 : $data->ratings->rating }}"></div>
+                                    <div class="row social-tool">
+                                        <p class="float-left text-muted">
+                                            <a class="fb-share"
+                                               href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
+                                               target="_blank">
+                                                <i class="material-icons">share</i>
+                                            </a>
+                                        </p>
+                                        <p class="float-right text-muted ">
+                                            <span>{{ (int)$data->likes->count() }}</span> <i class="material-icons">thumb_up</i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="card" style="width: 30%;height: 270px;margin: 0 3%;">
-                        <i class="material-icons icon-food card-img-top">local_cafe</i>
-                        <div class="card-body">
-                            <div class="rating card-title"
-                                 style="margin-left: -15px;width: 75px;margin-top: -10px;"></div>
-                            <div class="row social-tool">
-                                <p class="float-left text-muted align-self-start">
-                                    <a class="fb-share" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
-                                       target="_blank">
-                                        <i class="material-icons">share</i>
-                                    </a>
-                                </p>
-                                <p class="float-right text-muted align-self-end">
-                                    <i class="material-icons">thumb_up</i>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 30%;height: 270px;">
-                        <i class="material-icons icon-food card-img-top">local_cafe</i>
-                        <div class="card-body">
-                            <div class="rating card-title"
-                                 style="margin-left: -15px;width: 75px;margin-top: -10px;"></div>
-                            <div class="row social-tool">
-                                <p class="float-left text-muted align-self-start">
-                                    <a class="fb-share" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
-                                       target="_blank">
-                                        <i class="material-icons">share</i>
-                                    </a>
-                                </p>
-                                <p class="float-right text-muted align-self-end">
-                                    <i class="material-icons">thumb_up</i>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-                <div class="row justify-content-center">
-                    <div class="card" style="width: 30%; height: 270px;">
-                        <i class="material-icons icon-food card-img-top">restaurant</i>
-                        <div class="card-body">
-                            <div class="rating card-title"
-                                 style="margin-left: -15px;width: 75px;margin-top: -10px;"></div>
-                            <div class="row social-tool">
-                                <p class="float-left text-muted">
-                                    <a class="fb-share" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
-                                       target="_blank">
-                                        <i class="material-icons">share</i>
-                                    </a>
-                                </p>
-                                <p class="float-right text-muted ">
-                                    <i class="material-icons">thumb_up</i>
-                                </p>
-                            </div>
+                <div class="row justify-content-center" style="margin-bottom: 20px">
+                    @foreach($drink as $data)
+                        <div class="card" style="width: 30%; height: 270px;margin: 0 1%;">
+                            <a href="{{ route('produk.detail', ['id' => $data->id_produk]) }}">
+                                @if($data->gambar === '')
+                                    <img src="http://via.placeholder.com/336x200" class="img-responsive">
+                                @else
+                                    <img src="{{ asset('storage/images/'.$data->gambar) }}" class="" width="100%"
+                                         height="200px">
+                                @endif
+                                <div class="card-body">
+                                    <div class="rating card-title"
+                                         style="margin-left: -15px;width: 75px;margin-top: -10px;"
+                                         data-rateyo-rating="{{ (empty($data->ratings->rating)) ? 0 : $data->ratings->rating }}"></div>
+                                    <div class="row social-tool">
+                                        <p class="float-left text-muted">
+                                            <a class="fb-share"
+                                               href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
+                                               target="_blank">
+                                                <i class="material-icons">share</i>
+                                            </a>
+                                        </p>
+                                        <p class="float-right text-muted ">
+                                            <span>{{ (int)$data->likes->count() }}</span> <i class="material-icons">thumb_up</i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="card" style="width: 30%;height: 270px;margin: 0 3%;">
-                        <i class="material-icons icon-food card-img-top">local_cafe</i>
-                        <div class="card-body">
-                            <div class="rating card-title"
-                                 style="margin-left: -15px;width: 75px;margin-top: -10px;"></div>
-                            <div class="row social-tool">
-                                <p class="float-left text-muted align-self-start">
-                                    <a class="fb-share" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
-                                       target="_blank">
-                                        <i class="material-icons">share</i>
-                                    </a>
-                                </p>
-                                <p class="float-right text-muted align-self-end">
-                                    <i class="material-icons">thumb_up</i>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 30%;height: 270px;">
-                        <i class="material-icons icon-food card-img-top">local_cafe</i>
-                        <div class="card-body">
-                            <div class="rating card-title"
-                                 style="margin-left: -15px;width: 75px;margin-top: -10px;"></div>
-                            <div class="row social-tool">
-                                <p class="float-left text-muted align-self-start">
-                                    <a class="fb-share" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
-                                       target="_blank">
-                                        <i class="material-icons">share</i>
-                                    </a>
-                                </p>
-                                <p class="float-right text-muted align-self-end">
-                                    <i class="material-icons">thumb_up</i>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -148,7 +98,8 @@
                     <div class="card" style="margin: 50px 0;">
                         <a href="http://www.facebook.com" target="_blank">
                             <div class="card-body">
-                                <a href="{{ route('fb-login') }}" target="_blank"><img src="{{ asset('assets/facebook.svg') }}" width="40px" alt=""></a>
+                                <a href="{{ route('fb-login') }}" target="_blank"><img
+                                            src="{{ asset('assets/facebook.svg') }}" width="40px" alt=""></a>
                             </div>
                         </a>
                     </div>
@@ -172,9 +123,11 @@
         $(document).ready(function () {
             $('#myModal').modal();
             $(".rating").rateYo({
-                rating: 3.6,
                 starWidth: "15px"
+            }).on("rateyo.set", function (e, data) {
+                alert("The rating is set to " + data.rating + "!");
             });
+
         });
     </script>
 @endsection

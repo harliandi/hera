@@ -42,14 +42,25 @@
          */
         public function store(Request $request)
         {
-            Produk::create([
+            $model = Produk::create([
                 'nama_produk'      => $request->nama_produk,
                 'id_kategori'      => $request->id_kategori,
-                'id_city'      => $request->id_city,
+                'id_city'          => $request->id_city,
+                'gambar'           => '',
                 'deskripsi_produk' => $request->deskripsi_produk,
                 'latitude'         => $request->latitude,
                 'longtitude'       => $request->longtitude,
             ]);
+
+            if ($request->hasFile('gambar')) {
+                $request->file('gambar')->store('public/images');
+
+                // ensure every image has a different name
+                $file_name = $request->file('gambar')->hashName();
+
+                // save new image $file_name to database
+                $model->update(['gambar' => $file_name]);
+            }
             return redirect()->route('produk.index');
         }
 
@@ -72,7 +83,11 @@
          */
         public function edit($id)
         {
-            return view('produk_create')->with('produk', Produk::find($id));
+            $cat = Kategori::pluck('nama_kategori', 'id_kategori');
+            $city = Regency::pluck('name', 'id');
+            $produk = Produk::find($id);
+            Mapper::map($produk->latitude, $produk->longtitude, ['eventBeforeLoad' => 'addMarkerListener(map);']);
+            return view('produk_create')->with(['cat' => $cat, 'city' => $city, 'produk' => $produk]);
         }
 
         /**
@@ -85,7 +100,7 @@
         public function update(Request $request, $id)
         {
             $produk = Produk::find($id);
-            if($produk){
+            if ($produk) {
                 $produk->nama_produk = $request->nama_produk;
                 $produk->id_produl = $request->id_produl;
                 $produk->deskripsi_produk = $request->deskripsi_produk;
@@ -93,6 +108,15 @@
                 $produk->latitude = $request->latitude;
                 $produk->longtitude = $request->longtitude;
                 $produk->save();
+                if ($request->hasFile('gambar')) {
+                    $request->file('gambar')->store('public/images');
+
+                    // ensure every image has a different name
+                    $file_name = $request->file('gambar')->hashName();
+
+                    // save new image $file_name to database
+                    $produk->update(['gambar' => $file_name]);
+                }
             }
             return redirect()->route('produk.index');
         }

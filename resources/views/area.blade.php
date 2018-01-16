@@ -8,11 +8,11 @@
                 {{ Form::open(['route' => 'area.detail', 'class' => 'form', 'method' => 'get']) }}
                 <div class="form-group">
                     {{ Form::label('provinsi', 'Province', ['class' => 'label']) }}
-                    {{ Form::select('provinsi',$prov, null, ['placeholder' => 'Choose Province', 'class' => 'form-control', 'required' => 'required']) }}
+                    {{ Form::select('provinsi',$prov, null, ['placeholder' => 'Choose Province', 'class' => 'form-control select_complete', 'required' => 'required']) }}
                 </div>
                 <div class="form-group">
                     {{ Form::label('kota', 'City', ['class' => 'label']) }}
-                    {{ Form::select('kota', [], null, ['placeholder' => 'Choose City', 'class' => 'form-control', 'required' => 'required']) }}
+                    {{ Form::select('kota', [], null, ['placeholder' => 'Choose City', 'class' => 'form-control select_complete', 'required' => 'required']) }}
                 </div>
                 <div class="form-group">
                     {{ Form::label('kategori', 'Category', ['class' => 'label']) }}

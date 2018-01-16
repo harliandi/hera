@@ -17,10 +17,10 @@
                 </tr>
                 </thead>
                 <tbody>
+                @php
+                    $i = 1;
+                @endphp
                 @foreach($kategori as $item)
-                    @php
-                        $i = 1;
-                    @endphp
                     <tr>
                         <td>{{ $i++ }}</td>
                         <td>{{ $item->nama_kategori }}</td>
